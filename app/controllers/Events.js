@@ -1,6 +1,6 @@
-const {
-    reportEvent
-} = require("../actions");
+const { reportEvent } = require("../actions");
+
+//const 
 
 
 const createEvent = (req, res) => {
@@ -22,7 +22,7 @@ const createEvent = (req, res) => {
     
 }
 
-module.exports() = {
+module.exports = {
     createEvent
     
 };
