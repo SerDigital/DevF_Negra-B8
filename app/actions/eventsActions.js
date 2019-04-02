@@ -8,3 +8,5 @@ const reportEvent = (data) => {
 module.exports = {
     reportEvent
 };
+
+

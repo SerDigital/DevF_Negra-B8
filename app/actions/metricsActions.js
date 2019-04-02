@@ -1,9 +1,9 @@
 const Metric = require("../models/Metrics");
 
-const createMetric = (data) =>{
+const reportMetric = (data) =>{
     return Metric.create(data);
 }
 
 module.exports = {
-    createMetric
+    reportMetric
 };
