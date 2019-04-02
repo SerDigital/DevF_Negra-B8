@@ -14,7 +14,10 @@ const app = express();
 //Morgan es un LOG
 //app.use(morgan(":method :url :status :res[content-length] - :response-time ms"));
 
-app.use(bodyParser.json());
+// TODO: Verificar si el cliente lo envia en JSON, si es así comentar esta línea.
+//app.use(bodyParser.json());
+
+
 app.use(cors());
 
 //Agrega las opciones de las versiones del API
