@@ -7,7 +7,7 @@ Generar:
         Eventos
         Metricas
 
-
+    Metricas de acuerdo a window.performance
 
     Acciones
         

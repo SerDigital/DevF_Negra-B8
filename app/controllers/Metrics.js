@@ -3,8 +3,8 @@ const { reportMetric } = require("../actions");
 const createMetric = (req, res) => {
 
 
-    console.log("S");
-    //console.log(req.body);
+    //console.log("S");
+    console.log(req.body);
 
     reportMetric(req.body).then((event) =>{
         res.status(201).json(event);
