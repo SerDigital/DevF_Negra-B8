@@ -3,7 +3,7 @@ const { reportMetric } = require("../actions");
 const createMetric = (req, res) => {
 
     //TODO: Verificar el problema del formato de la recepción del post.
-    // //console.log("S");
+    // console.log("S");
     // console.log(req.body);
 
     reportMetric(req.body).then((event) =>{

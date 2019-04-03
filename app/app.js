@@ -11,14 +11,22 @@ const router = require("./routes/index");
 
 const app = express();
 
+app.use(cors());
+
+// app.use((req, res, next) => {
+//     console.log('ESTO LLEGA')
+//     console.log(res.body)
+//     next()
+// })
 //Morgan es un LOG
 //app.use(morgan(":method :url :status :res[content-length] - :response-time ms"));
 
+
 // TODO: Verificar si el cliente lo envia en JSON, si es así comentar esta línea.
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 
-app.use(cors());
+
 
 //Agrega las opciones de las versiones del API
 app.use("/api/v1",router);

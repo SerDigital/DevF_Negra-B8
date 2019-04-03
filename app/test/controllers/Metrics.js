@@ -1,6 +1,6 @@
 const chai = require('chai');
 const sinonExpress = require('sinon-express-mock');
-const proxyquire = require('proxiquire');
+const proxyquire = require('proxyquire');
 
 let mockReq = sinonExpress.mockReq;
 let mockRes = sinonExpress.mockRes;
@@ -8,8 +8,7 @@ let mockRes = sinonExpress.mockRes;
 const expect = chai.expect;
 
 
-
-const createMetric = () => {
+const reportMetric = () => {
     return new Promise((resolve, reject) => {
         resolve({})
     })
@@ -20,8 +19,8 @@ const res = mockRes();
 
 chai.use(require('sinon-chai'));
 
-describe('User Controller', () => {
-    it('Should response 200', (done) => {
+describe('Metrics Controller', () => {
+    it('Should response 201', (done) => {
       unitPath = '../../controllers/Metrics';
       unitServices = {
         '../actions': {
@@ -29,9 +28,9 @@ describe('User Controller', () => {
         } 
       }
       unit = proxyquire(unitPath, unitServices);
-      unit.getUsers(req, res)
+      unit.createMetric(req, res)
       setTimeout(() => {
-          expect(res.status).to.be.calledOnceWith(200)
+          expect(res.status).to.be.calledOnceWith(201)
           expect(res.json).to.be.calledOnce
           done()
       }, 0)
