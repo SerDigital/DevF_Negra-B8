@@ -7,7 +7,9 @@ let mockRes = sinonExpress.mockRes;
 
 const expect = chai.expect;
 
-const reportMetric = () => {
+console.log('hola')
+
+const reportEvent = () => {
     return new Promise((resolve, reject) => {
         resolve({})
     })
@@ -18,16 +20,16 @@ const res = mockRes();
 
 chai.use(require('sinon-chai'));
 
-describe('Metrics Controller', () => {
+describe('Events Controller', () => {
     it('Should response 201', (done) => {
-      unitPath = '../../controllers/Metrics';
+      unitPath = '../../controllers/Events';
       unitServices = {
         '../actions': {
-          reportMetric
+          reportEvent
         } 
       }
       unit = proxyquire(unitPath, unitServices);
-      unit.createMetric(req, res)
+      unit.createEvent(req, res)
       setTimeout(() => {
           expect(res.status).to.be.calledOnceWith(201)
           expect(res.json).to.be.calledOnce
@@ -35,5 +37,3 @@ describe('Metrics Controller', () => {
       }, 0)
     });
 })
-
-

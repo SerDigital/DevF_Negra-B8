@@ -1,22 +1,21 @@
 const express = require('express');
+const {createUser} = require('../controllers/Users')
+
 const {createEvent} = require("../controllers/Events");
 const {createMetric}  = require("../controllers/Metrics");
 
-const isAuthenticated = require ("../middlewares/isAuthenticated");
-
-
 const router = express.Router();
 
-//Create the route
+//Create the routes
+
+//Users
+router.post("/createuser", createUser);
+
+//Events
 router.post("/createevent", createEvent);
 
+//Create Metric
 router.post("/createmetric", createMetric);
-
-
-
-//Authenticated ENDPOINT 
-// router.post("/createevent", isAuthenticated, createEvent);
-
 
 //Exporta el objeto de router.
 module.exports = router;

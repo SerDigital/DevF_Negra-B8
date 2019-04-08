@@ -6,12 +6,13 @@ const {SECRET_KEY} = require("../config");
 const tokenPrefix = "JWT";
 
 
-// TODO: Complete the tokenization
+// TODO: Completar l generación de tokens
 
 const verifiToken = (token) => {
     if(!token) throw new Error("No token provided");
-
 }
+
+
 
 
 

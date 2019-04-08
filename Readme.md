@@ -1,4 +1,7 @@
 
+# API para el registro de métricas de rendimiento.
+
+### De acuerdo a window.performance
 
 
 Generar: 
@@ -7,7 +10,7 @@ Generar:
         Eventos
         Metricas
 
-    Metricas de acuerdo a window.performance
+    
 
     Acciones
         

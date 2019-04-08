@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const EventsSchema = new Schema ({
-    ubicacion: String, 
-    user_id: String,
-    recurso : String
+    uuid: String, 
+    instance: String,
+    url : String
 });
 
 module.exports = mongoose.model('events', EventsSchema);

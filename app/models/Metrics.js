@@ -23,11 +23,20 @@ const MetricsSchema = new Schema({
     responseStart: Number,
     secureConnectionStart: Number,
     unloadEventEnd: Number,
-    unloadEventStart: Number,    
+    unloadEventStart: Number,  
+
+    totalRequest: Number, 
+    totalResponse: Number,
+    totalRequestResponse: Number,
+    total: Number,
     
-    user_id: String, 
-    element: String
+    urlSite: String,
+    uuid: String, 
+    date: Date    
 });
 
 module.exports = mongoose.model("metrics", MetricsSchema);
 
+
+//TODO: Verificar porque este modelo no se guarda, 
+//de acuerdo al POST desde POSTMAN

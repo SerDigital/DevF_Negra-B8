@@ -1,10 +1,6 @@
 const { reportEvent } = require("../actions");
 
-//const 
-
-
 const createEvent = (req, res) => {
-
     // TODO: Agregar secciones adicionales necesarias para la evaluación del evento.
 
     //const varss = req.body;
@@ -14,7 +10,7 @@ const createEvent = (req, res) => {
     //  console.log(varss);
     //res.send(200);
 
-
+    
     console.log(req.body)
     reportEvent(req.body).then((event) => {
         res.status(201).json(event);
