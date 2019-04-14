@@ -37,6 +37,3 @@ const MetricsSchema = new Schema({
 
 module.exports = mongoose.model("metrics", MetricsSchema);
 
-
-//TODO: Verificar porque este modelo no se guarda, 
-//de acuerdo al POST desde POSTMAN

@@ -13,11 +13,11 @@ let port = 3000;
 
 app.use(cors());
 
-app.use((req, res, next) => {
-    console.log('ESTO LLEGA')
-    console.log("Body app.js", res.body)
-    next()
-})
+// app.use((req, res, next) => {
+//     console.log('ESTO LLEGA')
+//     console.log("Body app.js", res.body)
+//     next()
+// })
 //Morgan es un LOG
 //app.use(morgan(":method :url :status :res[content-length] - :response-time ms"));
 

@@ -1,10 +1,12 @@
 const express = require('express');
 
-const bodyParser = require('body-parse');
+
+const { getAllUsersData } = require('./app/actions/userActions');
 
 
-let port = 5000;
 
-const app = express();
+let num = getAllUsersData.length;
 
 
+
+console.log('SS', num);

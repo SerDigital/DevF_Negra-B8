@@ -1,7 +1,5 @@
-//TODO: Generar el controller de Users.
-//const { newUser, otraFuncion, getUserID } = require('../actions');
 
-const { newUser } = require('../actions/userActions');
+const { newUser, getAllUsersData } = require('../actions/userActions');
 
 //Crea el usuario.
 const createUser = (req, res) => {
@@ -12,10 +10,25 @@ const createUser = (req, res) => {
 
     //TODO: Agregar error de createUser
     let usuario = newUser(req);
-    console.log("Respuesta", usuario.uuid);
+    console.log("Respuesta: ", usuario.uuid, getTime());
+
     res.status(200).send(usuario.uuid);
 }
 
+const getTime = (a) => {
+    var myDate = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+    return myDate;
+}
+
+const getAllUsers = (req, res) => {
+    getAllUsersData().then((users) => {
+        return res.status(200).json(users);
+    }).catch((r) =>{ 
+        return res.status(400).json(e);
+    })
+}
+
 module.exports = {
-    createUser
+    createUser,
+    getAllUsers
 }
